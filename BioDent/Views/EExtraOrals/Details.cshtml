@@ -1,0 +1,42 @@
+﻿@model BioDent.Models.EExtraOral
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EExtraOral</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cabeza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cabeza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuello)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuello)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GangliosCervicales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GangliosCervicales)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identificador }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,112 @@
+﻿@model BioDent.Models.AOdontologico
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AOdontologico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TratamientoPrevio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TratamientoPrevio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extracciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extracciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profilaxis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profilaxis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endodoncia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endodoncia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Protesis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Protesis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amaigama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amaigama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resinas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resinas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrtopediaMaxiliar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrtopediaMaxiliar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ortodoncia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ortodoncia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlegicoAnestico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlegicoAnestico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaUltimaVisitaDentisata)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaUltimaVisitaDentisata)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

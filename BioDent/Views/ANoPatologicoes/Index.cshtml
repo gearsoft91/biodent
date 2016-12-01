@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BioDent.Models.ANoPatologico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VecesCepillado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonasEnCasa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PracticaDeporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsumeAlcohol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Embarazada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grado1.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grado2.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VecesCepillado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonasEnCasa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PracticaDeporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConsumeAlcohol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Embarazada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grado1.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grado2.Descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Identificador }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Identificador }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Identificador })
+        </td>
+    </tr>
+}
+
+</table>

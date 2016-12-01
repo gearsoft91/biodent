@@ -1,0 +1,113 @@
+﻿@model IEnumerable<BioDent.Models.Expediente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Tables <small>Some examples to get you started</small></h3>
+            </div>
+            <div class="title_right">
+                @using (Html.BeginForm())
+                {
+                    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                        <div class="input-group">
+                            @Html.TextBox("nombreBuscar", null, new { @class = "form-control" })
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Buscar</button>
+                            </span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Listado de pacientes <small>Try hovering over the rows</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="pull-right">
+
+                                    <a href='@(Url.Action("Create", "Expedientes"))' class="btn btn-round btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Agregar nuevo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>@Html.DisplayNameFor(model => model.FechaExpediente) </th>
+                                        <th>@Html.DisplayNameFor(model => model.AHereditario.FamiliarFallecidoDeEnfermedad)</th>
+                                        <th>@Html.DisplayNameFor(model => model.ANoPatologico.PracticaDeporte)</th>
+                                        <th>@Html.DisplayNameFor(model => model.AOdontologico.TratamientoPrevio)</th>
+                                        <th>@Html.DisplayNameFor(model => model.APatologico.EnfermedadGrave)</th>
+                                        <th>@Html.DisplayNameFor(model => model.EATM.TieneDolor)</th>
+                                        <th>@Html.DisplayNameFor(model => model.EExtraOral.Cabeza)</th>
+                                        <th>@Html.DisplayNameFor(model => model.EIntraOral.Labios)</th>
+                                        <th>@Html.DisplayNameFor(model => model.Odontograma1.Pronostico)</th>
+                                        <th>@Html.DisplayNameFor(model => model.Paciente1.Nombre)</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.FechaExpediente)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.AHereditario.FamiliarFallecidoDeEnfermedad)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ANoPatologico.PracticaDeporte)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.AOdontologico.TratamientoPrevio)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.APatologico.EnfermedadGrave)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EATM.TieneDolor)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EExtraOral.Cabeza)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EIntraOral.Labios)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Odontograma1.Pronostico)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Paciente1.Nombre)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.Identificador }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.Identificador }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.Identificador })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

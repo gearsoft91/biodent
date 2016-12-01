@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3729d3ff39e0476db73b4f1c23f7e05d" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_DentistaModel.AHereditario" Width="1.5" PointX="3.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.ANoPatologico" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.AOdontologico" Width="1.5" PointX="3.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.APatologico" Width="1.5" PointX="3.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.Consulta" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.Diente" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.EATM" Width="1.5" PointX="3.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.EExtraOral" Width="1.5" PointX="3.75" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.EIntraOral" Width="1.5" PointX="3.75" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.Expediente" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.Grado" Width="1.5" PointX="1.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.Medico" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.Odontograma" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_DentistaModel.Paciente" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="DB_DentistaModel.fk_hereditario" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_gradoA" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_gradoH" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_nopatologico" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_odontologico" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_patologico" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_medico" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_diente" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_ATM" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_extraoral" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_intraoral" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_odontograma" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_persona2" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_DentistaModel.fk_persona1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

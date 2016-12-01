@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_DentistaModelStoreContainer" CdmEntityContainer="DB_DentistaEntities">
+    <EntitySetMapping Name="AHereditario">
+      <EntityTypeMapping TypeName="DB_DentistaModel.AHereditario">
+        <MappingFragment StoreEntitySet="AHereditario">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="FamiliarFallecidoDeEnfermedad" ColumnName="FamiliarFallecidoDeEnfermedad" />
+          <ScalarProperty Name="Causa" ColumnName="Causa" />
+          <ScalarProperty Name="FamiliarEnfermo" ColumnName="FamiliarEnfermo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ANoPatologico">
+      <EntityTypeMapping TypeName="DB_DentistaModel.ANoPatologico">
+        <MappingFragment StoreEntitySet="ANoPatologico">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Higiene" ColumnName="Higiene" />
+          <ScalarProperty Name="Alimentacion" ColumnName="Alimentacion" />
+          <ScalarProperty Name="VecesCepillado" ColumnName="VecesCepillado" />
+          <ScalarProperty Name="PersonasEnCasa" ColumnName="PersonasEnCasa" />
+          <ScalarProperty Name="PracticaDeporte" ColumnName="PracticaDeporte" />
+          <ScalarProperty Name="ConsumeAlcohol" ColumnName="ConsumeAlcohol" />
+          <ScalarProperty Name="Embarazada" ColumnName="Embarazada" />
+          <ScalarProperty Name="Grado" ColumnName="Grado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AOdontologico">
+      <EntityTypeMapping TypeName="DB_DentistaModel.AOdontologico">
+        <MappingFragment StoreEntitySet="AOdontologico">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="TratamientoPrevio" ColumnName="TratamientoPrevio" />
+          <ScalarProperty Name="Extracciones" ColumnName="Extracciones" />
+          <ScalarProperty Name="Profilaxis" ColumnName="Profilaxis" />
+          <ScalarProperty Name="Endodoncia" ColumnName="Endodoncia" />
+          <ScalarProperty Name="Protesis" ColumnName="Protesis" />
+          <ScalarProperty Name="Amaigama" ColumnName="Amaigama" />
+          <ScalarProperty Name="Resinas" ColumnName="Resinas" />
+          <ScalarProperty Name="OrtopediaMaxiliar" ColumnName="OrtopediaMaxiliar" />
+          <ScalarProperty Name="Ortodoncia" ColumnName="Ortodoncia" />
+          <ScalarProperty Name="AlegicoAnestico" ColumnName="AlegicoAnestico" />
+          <ScalarProperty Name="FechaUltimaVisitaDentisata" ColumnName="FechaUltimaVisitaDentisata" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APatologico">
+      <EntityTypeMapping TypeName="DB_DentistaModel.APatologico">
+        <MappingFragment StoreEntitySet="APatologico">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="EnfermedadGrave" ColumnName="EnfermedadGrave" />
+          <ScalarProperty Name="Traumatismo" ColumnName="Traumatismo" />
+          <ScalarProperty Name="Transfunciones" ColumnName="Transfunciones" />
+          <ScalarProperty Name="Hemorragias" ColumnName="Hemorragias" />
+          <ScalarProperty Name="Donadores" ColumnName="Donadores" />
+          <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+          <ScalarProperty Name="ConsumeMedicamento" ColumnName="ConsumeMedicamento" />
+          <ScalarProperty Name="AccidenteTratamiento" ColumnName="AccidenteTratamiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consulta">
+      <EntityTypeMapping TypeName="DB_DentistaModel.Consulta">
+        <MappingFragment StoreEntitySet="Consulta">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="FechaCita" ColumnName="FechaCita" />
+          <ScalarProperty Name="HoraCita" ColumnName="HoraCita" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+          <ScalarProperty Name="Medico" ColumnName="Medico" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diente">
+      <EntityTypeMapping TypeName="DB_DentistaModel.Diente">
+        <MappingFragment StoreEntitySet="Diente">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EATM">
+      <EntityTypeMapping TypeName="DB_DentistaModel.EATM">
+        <MappingFragment StoreEntitySet="EATM">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="TieneDolor" ColumnName="TieneDolor" />
+          <ScalarProperty Name="LimitacionApertura" ColumnName="LimitacionApertura" />
+          <ScalarProperty Name="LimitacionMovimiento" ColumnName="LimitacionMovimiento" />
+          <ScalarProperty Name="RechinaDiente" ColumnName="RechinaDiente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EExtraOral">
+      <EntityTypeMapping TypeName="DB_DentistaModel.EExtraOral">
+        <MappingFragment StoreEntitySet="EExtraOral">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Cabeza" ColumnName="Cabeza" />
+          <ScalarProperty Name="Cuello" ColumnName="Cuello" />
+          <ScalarProperty Name="GangliosCervicales" ColumnName="GangliosCervicales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EIntraOral">
+      <EntityTypeMapping TypeName="DB_DentistaModel.EIntraOral">
+        <MappingFragment StoreEntitySet="EIntraOral">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Labios" ColumnName="Labios" />
+          <ScalarProperty Name="PaladarDuro" ColumnName="PaladarDuro" />
+          <ScalarProperty Name="PaladarBlando" ColumnName="PaladarBlando" />
+          <ScalarProperty Name="Farinje" ColumnName="Farinje" />
+          <ScalarProperty Name="PisoBoca" ColumnName="PisoBoca" />
+          <ScalarProperty Name="GlandulasSalivales" ColumnName="GlandulasSalivales" />
+          <ScalarProperty Name="TamanioFormaDiente" ColumnName="TamanioFormaDiente" />
+          <ScalarProperty Name="ProcesoAlveolares" ColumnName="ProcesoAlveolares" />
+          <ScalarProperty Name="EstadoGeneral" ColumnName="EstadoGeneral" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expediente">
+      <EntityTypeMapping TypeName="DB_DentistaModel.Expediente">
+        <MappingFragment StoreEntitySet="Expediente">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="FechaExpediente" ColumnName="FechaExpediente" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+          <ScalarProperty Name="Patologico" ColumnName="Patologico" />
+          <ScalarProperty Name="NoPatologico" ColumnName="NoPatologico" />
+          <ScalarProperty Name="Odontologico" ColumnName="Odontologico" />
+          <ScalarProperty Name="Hereditario" ColumnName="Hereditario" />
+          <ScalarProperty Name="ExtraOral" ColumnName="ExtraOral" />
+          <ScalarProperty Name="IntraOral" ColumnName="IntraOral" />
+          <ScalarProperty Name="ATM" ColumnName="ATM" />
+          <ScalarProperty Name="Odontograma" ColumnName="Odontograma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grado">
+      <EntityTypeMapping TypeName="DB_DentistaModel.Grado">
+        <MappingFragment StoreEntitySet="Grado">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medico">
+      <EntityTypeMapping TypeName="DB_DentistaModel.Medico">
+        <MappingFragment StoreEntitySet="Medico">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Consulta" ColumnName="Consulta" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odontograma">
+      <EntityTypeMapping TypeName="DB_DentistaModel.Odontograma">
+        <MappingFragment StoreEntitySet="Odontograma">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Diente" ColumnName="Diente" />
+          <ScalarProperty Name="Pronostico" ColumnName="Pronostico" />
+          <ScalarProperty Name="Diagnostivo" ColumnName="Diagnostivo" />
+          <ScalarProperty Name="Tratamiento" ColumnName="Tratamiento" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paciente">
+      <EntityTypeMapping TypeName="DB_DentistaModel.Paciente">
+        <MappingFragment StoreEntitySet="Paciente">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Seudominio" ColumnName="Seudominio" />
+          <ScalarProperty Name="LugarNacimiento" ColumnName="LugarNacimiento" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Escolaridad" ColumnName="Escolaridad" />
+          <ScalarProperty Name="Tutor" ColumnName="Tutor" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

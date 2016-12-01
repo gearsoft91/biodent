@@ -1,0 +1,98 @@
+﻿@model BioDent.Models.Expediente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expediente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaExpediente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaExpediente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AHereditario.FamiliarFallecidoDeEnfermedad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AHereditario.FamiliarFallecidoDeEnfermedad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANoPatologico.PracticaDeporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANoPatologico.PracticaDeporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AOdontologico.TratamientoPrevio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AOdontologico.TratamientoPrevio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APatologico.EnfermedadGrave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APatologico.EnfermedadGrave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EATM.TieneDolor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EATM.TieneDolor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EExtraOral.Cabeza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EExtraOral.Cabeza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EIntraOral.Labios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EIntraOral.Labios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Odontograma1.Pronostico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odontograma1.Pronostico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente1.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente1.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identificador }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

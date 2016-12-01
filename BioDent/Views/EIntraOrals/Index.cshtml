@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BioDent.Models.EIntraOral>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Labios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaladarDuro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaladarBlando)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Farinje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PisoBoca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GlandulasSalivales)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TamanioFormaDiente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProcesoAlveolares)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoGeneral)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Labios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaladarDuro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaladarBlando)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Farinje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PisoBoca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GlandulasSalivales)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TamanioFormaDiente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProcesoAlveolares)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoGeneral)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Identificador }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Identificador }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Identificador })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,42 @@
+﻿@model BioDent.Models.AHereditario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AHereditario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FamiliarFallecidoDeEnfermedad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FamiliarFallecidoDeEnfermedad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Causa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Causa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FamiliarEnfermo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FamiliarEnfermo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identificador }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

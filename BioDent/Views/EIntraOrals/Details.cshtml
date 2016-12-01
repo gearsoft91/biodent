@@ -1,0 +1,90 @@
+﻿@model BioDent.Models.EIntraOral
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EIntraOral</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Labios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Labios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaladarDuro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaladarDuro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaladarBlando)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaladarBlando)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Farinje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Farinje)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PisoBoca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PisoBoca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GlandulasSalivales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GlandulasSalivales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TamanioFormaDiente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TamanioFormaDiente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcesoAlveolares)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcesoAlveolares)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoGeneral)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoGeneral)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identificador }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

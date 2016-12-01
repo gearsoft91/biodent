@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_DentistaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AHereditario">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" />
+    <Property Name="FamiliarFallecidoDeEnfermedad" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Causa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FamiliarEnfermo" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_hereditario" FromRole="AHereditario" ToRole="Expediente" />
+  </EntityType>
+  <EntityType Name="ANoPatologico">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" />
+    <Property Name="Higiene" Type="Int32" />
+    <Property Name="Alimentacion" Type="Int32" />
+    <Property Name="VecesCepillado" Type="Int32" />
+    <Property Name="PersonasEnCasa" Type="Int32" />
+    <Property Name="PracticaDeporte" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ConsumeAlcohol" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Embarazada" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Grado" Type="Int32" />
+    <NavigationProperty Name="Grado1" Relationship="Self.fk_gradoA" FromRole="ANoPatologico" ToRole="Grado" />
+    <NavigationProperty Name="Grado2" Relationship="Self.fk_gradoH" FromRole="ANoPatologico" ToRole="Grado" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_nopatologico" FromRole="ANoPatologico" ToRole="Expediente" />
+  </EntityType>
+  <EntityType Name="AOdontologico">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" />
+    <Property Name="TratamientoPrevio" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Extracciones" Type="Int32" />
+    <Property Name="Profilaxis" Type="Int32" />
+    <Property Name="Endodoncia" Type="Int32" />
+    <Property Name="Protesis" Type="Int32" />
+    <Property Name="Amaigama" Type="Int32" />
+    <Property Name="Resinas" Type="Int32" />
+    <Property Name="OrtopediaMaxiliar" Type="Int32" />
+    <Property Name="Ortodoncia" Type="Int32" />
+    <Property Name="AlegicoAnestico" Type="Int32" />
+    <Property Name="FechaUltimaVisitaDentisata" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_odontologico" FromRole="AOdontologico" ToRole="Expediente" />
+  </EntityType>
+  <EntityType Name="APatologico">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" />
+    <Property Name="EnfermedadGrave" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Traumatismo" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Transfunciones" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Hemorragias" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Donadores" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Alergias" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ConsumeMedicamento" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="AccidenteTratamiento" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_patologico" FromRole="APatologico" ToRole="Expediente" />
+  </EntityType>
+  <EntityType Name="Consulta">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaCita" Type="DateTime" Precision="0" />
+    <Property Name="HoraCita" Type="Time" Precision="7" />
+    <Property Name="Paciente" Type="Int32" />
+    <Property Name="Medico" Type="Int32" />
+    <Property Name="Motivo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Medico1" Relationship="Self.fk_medico" FromRole="Consulta" ToRole="Medico" />
+    <NavigationProperty Name="Paciente1" Relationship="Self.fk_persona" FromRole="Consulta" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Diente">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Odontograma" Relationship="Self.fk_diente" FromRole="Diente" ToRole="Odontograma" />
+  </EntityType>
+  <EntityType Name="EATM">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" />
+    <Property Name="TieneDolor" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="LimitacionApertura" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="LimitacionMovimiento" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="RechinaDiente" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_ATM" FromRole="EATM" ToRole="Expediente" />
+  </EntityType>
+  <EntityType Name="EExtraOral">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" />
+    <Property Name="Cabeza" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cuello" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GangliosCervicales" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_extraoral" FromRole="EExtraOral" ToRole="Expediente" />
+  </EntityType>
+  <EntityType Name="EIntraOral">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" />
+    <Property Name="Labios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaladarDuro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaladarBlando" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Farinje" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PisoBoca" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GlandulasSalivales" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TamanioFormaDiente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProcesoAlveolares" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoGeneral" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_intraoral" FromRole="EIntraOral" ToRole="Expediente" />
+  </EntityType>
+  <EntityType Name="Expediente">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaExpediente" Type="DateTime" Precision="0" />
+    <Property Name="Paciente" Type="Int32" />
+    <Property Name="Patologico" Type="Int32" />
+    <Property Name="NoPatologico" Type="Int32" />
+    <Property Name="Odontologico" Type="Int32" />
+    <Property Name="Hereditario" Type="Int32" />
+    <Property Name="ExtraOral" Type="Int32" />
+    <Property Name="IntraOral" Type="Int32" />
+    <Property Name="ATM" Type="Int32" />
+    <Property Name="Odontograma" Type="Int32" />
+    <NavigationProperty Name="AHereditario" Relationship="Self.fk_hereditario" FromRole="Expediente" ToRole="AHereditario" />
+    <NavigationProperty Name="ANoPatologico" Relationship="Self.fk_nopatologico" FromRole="Expediente" ToRole="ANoPatologico" />
+    <NavigationProperty Name="AOdontologico" Relationship="Self.fk_odontologico" FromRole="Expediente" ToRole="AOdontologico" />
+    <NavigationProperty Name="APatologico" Relationship="Self.fk_patologico" FromRole="Expediente" ToRole="APatologico" />
+    <NavigationProperty Name="EATM" Relationship="Self.fk_ATM" FromRole="Expediente" ToRole="EATM" />
+    <NavigationProperty Name="EExtraOral" Relationship="Self.fk_extraoral" FromRole="Expediente" ToRole="EExtraOral" />
+    <NavigationProperty Name="EIntraOral" Relationship="Self.fk_intraoral" FromRole="Expediente" ToRole="EIntraOral" />
+    <NavigationProperty Name="Odontograma1" Relationship="Self.fk_odontograma" FromRole="Expediente" ToRole="Odontograma" />
+    <NavigationProperty Name="Paciente1" Relationship="Self.fk_persona2" FromRole="Expediente" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Grado">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ANoPatologico" Relationship="Self.fk_gradoA" FromRole="Grado" ToRole="ANoPatologico" />
+    <NavigationProperty Name="ANoPatologico1" Relationship="Self.fk_gradoH" FromRole="Grado" ToRole="ANoPatologico" />
+  </EntityType>
+  <EntityType Name="Medico">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Consulta" Type="Int32" />
+    <Property Name="Domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Consulta1" Relationship="Self.fk_medico" FromRole="Medico" ToRole="Consulta" />
+  </EntityType>
+  <EntityType Name="Odontograma">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Diente" Type="Int32" />
+    <Property Name="Pronostico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Diagnostivo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Tratamiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Paciente" Type="Int32" />
+    <NavigationProperty Name="Diente1" Relationship="Self.fk_diente" FromRole="Odontograma" ToRole="Diente" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_odontograma" FromRole="Odontograma" ToRole="Expediente" />
+    <NavigationProperty Name="Paciente1" Relationship="Self.fk_persona1" FromRole="Odontograma" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="Identificador" />
+    </Key>
+    <Property Name="Identificador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Seudominio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LugarNacimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+    <Property Name="Escolaridad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tutor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoCivil" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Consulta" Relationship="Self.fk_persona" FromRole="Paciente" ToRole="Consulta" />
+    <NavigationProperty Name="Expediente" Relationship="Self.fk_persona2" FromRole="Paciente" ToRole="Expediente" />
+    <NavigationProperty Name="Odontograma" Relationship="Self.fk_persona1" FromRole="Paciente" ToRole="Odontograma" />
+  </EntityType>
+  <Association Name="fk_hereditario">
+    <End Role="AHereditario" Type="Self.AHereditario" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AHereditario">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="Hereditario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_gradoA">
+    <End Role="Grado" Type="Self.Grado" Multiplicity="0..1" />
+    <End Role="ANoPatologico" Type="Self.ANoPatologico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grado">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="ANoPatologico">
+        <PropertyRef Name="Alimentacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_gradoH">
+    <End Role="Grado" Type="Self.Grado" Multiplicity="0..1" />
+    <End Role="ANoPatologico" Type="Self.ANoPatologico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grado">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="ANoPatologico">
+        <PropertyRef Name="Higiene" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_nopatologico">
+    <End Role="ANoPatologico" Type="Self.ANoPatologico" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ANoPatologico">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="NoPatologico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_odontologico">
+    <End Role="AOdontologico" Type="Self.AOdontologico" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AOdontologico">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="Odontologico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_patologico">
+    <End Role="APatologico" Type="Self.APatologico" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APatologico">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="Patologico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_medico">
+    <End Role="Medico" Type="Self.Medico" Multiplicity="0..1" />
+    <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medico">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Consulta">
+        <PropertyRef Name="Medico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_persona">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+    <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Consulta">
+        <PropertyRef Name="Paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_diente">
+    <End Role="Diente" Type="Self.Diente" Multiplicity="1" />
+    <End Role="Odontograma" Type="Self.Odontograma" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Diente">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Odontograma">
+        <PropertyRef Name="Identificador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ATM">
+    <End Role="EATM" Type="Self.EATM" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EATM">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="ATM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_extraoral">
+    <End Role="EExtraOral" Type="Self.EExtraOral" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EExtraOral">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="ExtraOral" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_intraoral">
+    <End Role="EIntraOral" Type="Self.EIntraOral" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EIntraOral">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="IntraOral" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_odontograma">
+    <End Role="Odontograma" Type="Self.Odontograma" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odontograma">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="Odontograma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_persona2">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="Paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_persona1">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+    <End Role="Odontograma" Type="Self.Odontograma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="Identificador" />
+      </Principal>
+      <Dependent Role="Odontograma">
+        <PropertyRef Name="Paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_DentistaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AHereditario" EntityType="Self.AHereditario" />
+    <EntitySet Name="ANoPatologico" EntityType="Self.ANoPatologico" />
+    <EntitySet Name="AOdontologico" EntityType="Self.AOdontologico" />
+    <EntitySet Name="APatologico" EntityType="Self.APatologico" />
+    <EntitySet Name="Consulta" EntityType="Self.Consulta" />
+    <EntitySet Name="Diente" EntityType="Self.Diente" />
+    <EntitySet Name="EATM" EntityType="Self.EATM" />
+    <EntitySet Name="EExtraOral" EntityType="Self.EExtraOral" />
+    <EntitySet Name="EIntraOral" EntityType="Self.EIntraOral" />
+    <EntitySet Name="Expediente" EntityType="Self.Expediente" />
+    <EntitySet Name="Grado" EntityType="Self.Grado" />
+    <EntitySet Name="Medico" EntityType="Self.Medico" />
+    <EntitySet Name="Odontograma" EntityType="Self.Odontograma" />
+    <EntitySet Name="Paciente" EntityType="Self.Paciente" />
+    <AssociationSet Name="fk_hereditario" Association="Self.fk_hereditario">
+      <End Role="AHereditario" EntitySet="AHereditario" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_gradoA" Association="Self.fk_gradoA">
+      <End Role="Grado" EntitySet="Grado" />
+      <End Role="ANoPatologico" EntitySet="ANoPatologico" />
+    </AssociationSet>
+    <AssociationSet Name="fk_gradoH" Association="Self.fk_gradoH">
+      <End Role="Grado" EntitySet="Grado" />
+      <End Role="ANoPatologico" EntitySet="ANoPatologico" />
+    </AssociationSet>
+    <AssociationSet Name="fk_nopatologico" Association="Self.fk_nopatologico">
+      <End Role="ANoPatologico" EntitySet="ANoPatologico" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_odontologico" Association="Self.fk_odontologico">
+      <End Role="AOdontologico" EntitySet="AOdontologico" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_patologico" Association="Self.fk_patologico">
+      <End Role="APatologico" EntitySet="APatologico" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_medico" Association="Self.fk_medico">
+      <End Role="Medico" EntitySet="Medico" />
+      <End Role="Consulta" EntitySet="Consulta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_persona" Association="Self.fk_persona">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Consulta" EntitySet="Consulta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_diente" Association="Self.fk_diente">
+      <End Role="Diente" EntitySet="Diente" />
+      <End Role="Odontograma" EntitySet="Odontograma" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ATM" Association="Self.fk_ATM">
+      <End Role="EATM" EntitySet="EATM" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_extraoral" Association="Self.fk_extraoral">
+      <End Role="EExtraOral" EntitySet="EExtraOral" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_intraoral" Association="Self.fk_intraoral">
+      <End Role="EIntraOral" EntitySet="EIntraOral" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_odontograma" Association="Self.fk_odontograma">
+      <End Role="Odontograma" EntitySet="Odontograma" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_persona2" Association="Self.fk_persona2">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_persona1" Association="Self.fk_persona1">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Odontograma" EntitySet="Odontograma" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

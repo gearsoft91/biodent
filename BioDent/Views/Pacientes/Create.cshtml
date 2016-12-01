@@ -1,0 +1,131 @@
+﻿@model BioDent.Models.Paciente
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<!-- content-header -->
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h2><i class="icofont-home"></i><small> Bienvenido al sistema Dentist</small></h2>
+            </div><!-- /content-header -->
+            <!-- content-body -->
+            <div class="content-body">
+                <!-- calendar -->
+                <div class="row-fluid">
+                    <div class="span9">
+                        <div id="controls" class="row-fluid">
+                            <div class="span12">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <h4>Paciente</h4>
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "help-inline" })
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.ApellidoPaterno, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.ApellidoPaterno, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.ApellidoPaterno, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.ApellidoMaterno, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.ApellidoMaterno, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.ApellidoMaterno, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.Seudominio, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.Seudominio, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.Seudominio, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.LugarNacimiento, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.LugarNacimiento, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.LugarNacimiento, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.FechaNacimiento, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            <div class="input-append date" data-form="datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                                @Html.EditorFor(model => model.FechaNacimiento, new { htmlAttributes = new { @class = "grd-white" } })
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                @Html.ValidationMessageFor(model => model.FechaNacimiento, "", new { @class = "help-inline" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.Escolaridad, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.Escolaridad, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.Escolaridad, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.Tutor, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.Tutor, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.Tutor, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.EstadoCivil, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.EstadoCivil, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.EstadoCivil, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        @Html.LabelFor(model => model.Domicilio, htmlAttributes: new { @class = "control-label" })
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.Domicilio, new { htmlAttributes = new { @class = "grd-white" } })
+                                            @Html.ValidationMessageFor(model => model.Domicilio, "", new { @class = "help-inline" })
+                                        </div>
+                                    </div>
+                                    <div class="ln_solid"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-3 col-sm-1 col-xs-10 col-md-offset-0">
+                                            <input type="submit" value="Crear" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                }
+
+                                <div>
+                                    @Html.ActionLink("Back to List", "Index")
+                                </div>
+
+                                @section Scripts {
+                                    @Scripts.Render("~/bundles/jqueryval")
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

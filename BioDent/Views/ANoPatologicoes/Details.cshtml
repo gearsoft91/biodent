@@ -1,0 +1,82 @@
+﻿@model BioDent.Models.ANoPatologico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ANoPatologico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VecesCepillado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VecesCepillado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonasEnCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonasEnCasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PracticaDeporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PracticaDeporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumeAlcohol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsumeAlcohol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Embarazada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Embarazada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grado1.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grado1.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grado2.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grado2.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identificador }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

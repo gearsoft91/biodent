@@ -1,0 +1,93 @@
+﻿
+
+
+@model IEnumerable<BioDent.Models.AHereditario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Bienvenido al Sistema Biodent</h3>
+            </div>
+            <div class="title_right">
+                @using (Html.BeginForm())
+                {
+                    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                        <div class="input-group">
+                            @Html.TextBox("nombreBuscar", null, new { @class = "form-control" })
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Buscar</button>
+                            </span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Antecedentes Hereditarios</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x_content">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="pull-right">
+
+                        <a href='@(Url.Action("Create", "AHereditarios"))' class="btn btn-round btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Agregar nuevo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            
+                            <th>@Html.DisplayNameFor(model => model.FamiliarFallecidoDeEnfermedad)</th>
+                            <th>@Html.DisplayNameFor(model => model.Causa)</th>
+                            <th>@Html.DisplayNameFor(model => model.FamiliarEnfermo)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FamiliarFallecidoDeEnfermedad)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Causa)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FamiliarEnfermo)
+                                </td>
+                                
+                                <td>
+                                    <a href='@(Url.Action("Edit", "AHereditarios", new { id = item.Identificador }))' class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" data-original-title="Editar"><i class="fa fa-share"></i></a>
+                                    <a href='@(Url.Action("Details", "AHereditarios", new { id = item.Identificador }))' class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" data-original-title="Detalles"><i class="fa fa-print"></i></a>
+                                    <a href='@(Url.Action("Delete", "AHereditarios", new { id = item.Identificador }))' class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" data-original-title="Eliminar"><i class="fa fa-trash-o"></i></a>
+                                </td>
+                            </tr>
+                                      }
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+       
+
+

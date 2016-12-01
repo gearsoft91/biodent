@@ -1,0 +1,50 @@
+﻿@model BioDent.Models.EATM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EATM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TieneDolor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieneDolor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LimitacionApertura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LimitacionApertura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LimitacionMovimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LimitacionMovimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RechinaDiente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RechinaDiente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identificador }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
